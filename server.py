@@ -17,6 +17,17 @@ def add_numbers(a: int, b: int) -> int:
     """
     return a + b
 
+
+@mcp.tool()
+def subtract_numbers(a: int, b: int) -> int:
+    """
+    Subtract the second number from the first number.
+
+    The AI reads this docstring to understand what the tool does,
+    what parameters it expects, and when it should use it.
+    """
+    return a - b
+
 if __name__ == "__main__":
     # Auto-switch to HTTP in hosted environments (Render sets PORT).
     default_transport = "streamable-http" if os.getenv("PORT") else "stdio"
