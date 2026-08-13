@@ -18,8 +18,9 @@ def add_numbers(a: int, b: int) -> int:
     return a + b
 
 if __name__ == "__main__":
-    # Local default is stdio; set FASTMCP_TRANSPORT for hosted HTTP mode.
-    transport = os.getenv("FASTMCP_TRANSPORT", "stdio").lower()
+    # Auto-switch to HTTP in hosted environments (Render sets PORT).
+    default_transport = "streamable-http" if os.getenv("PORT") else "stdio"
+    transport = os.getenv("FASTMCP_TRANSPORT", default_transport).lower()
 
     if transport in {"http", "streamable-http", "sse"}:
         host = os.getenv("HOST", "0.0.0.0")
