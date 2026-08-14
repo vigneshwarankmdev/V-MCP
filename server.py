@@ -22,9 +22,6 @@ def add_numbers(a: int, b: int) -> int:
 def subtract_numbers(a: int, b: int) -> int:
     """
     Subtract the second number from the first number.
-
-    The AI reads this docstring to understand what the tool does,
-    what parameters it expects, and when it should use it.
     """
     return a - b
 
